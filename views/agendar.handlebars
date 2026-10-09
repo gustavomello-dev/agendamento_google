@@ -1,0 +1,51 @@
+<div class="page page-form">
+  <header class="page-header">
+    <a href="/" class="back-link" aria-label="Voltar">←</a>
+    <span class="header-brand">Barbearia do Mestre</span>
+  </header>
+
+  <div class="page-content">
+    <h1 class="page-title">Novo Agendamento</h1>
+    <p class="page-subtitle">Preencha os dados abaixo para reservar seu horário</p>
+
+    <form id="form-agendamento" novalidate>
+      <div class="field">
+        <label for="nome">NOME COMPLETO</label>
+        <input type="text" id="nome" name="nome" placeholder="João da Silva" required>
+      </div>
+
+      <div class="field">
+        <label for="telefone">TELEFONE / WHATSAPP</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" inputmode="numeric" required>
+      </div>
+
+      <div class="field">
+        <label for="servico">SERVIÇO</label>
+        <select id="servico" name="servico" required>
+          <option value="" disabled selected>Selecione o serviço</option>
+          {{#each servicos}}
+          <option value="{{this.nome}}">{{this.nome}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="dia">DIA</label>
+        <input type="date" id="dia" name="dia" required>
+      </div>
+
+      <div class="field">
+        <label>HORÁRIO</label>
+        <div class="horarios-grid" id="horarios-grid"></div>
+        <input type="hidden" id="horario" name="horario" required>
+      </div>
+
+      <div id="mensagem" class="mensagem"></div>
+
+      <button type="submit" class="btn btn-primary btn-full">AGENDAR</button>
+    </form>
+  </div>
+</div>
+
+<script src="/js/utils.js"></script>
+<script src="/js/agendar.js"></script>

@@ -1,0 +1,30 @@
+<div class="page page-form">
+  <header class="page-header">
+    <a href="/" class="back-link" aria-label="Voltar">←</a>
+    <span class="header-brand">Barbearia do Mestre</span>
+  </header>
+
+  <div class="page-content">
+    <h1 class="page-title">Consultar Agendamento</h1>
+    <p class="page-subtitle">Informe seu telefone e/ou nome para localizar seu horário</p>
+
+    <form id="form-consulta" novalidate>
+      <div class="field">
+        <label for="telefone">TELEFONE / WHATSAPP</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" inputmode="numeric">
+      </div>
+
+      <div class="field">
+        <label for="nome">NOME (OPCIONAL)</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome">
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full">BUSCAR AGENDAMENTO</button>
+    </form>
+
+    <div id="resultados" class="resultados"></div>
+  </div>
+</div>
+
+<script src="/js/utils.js"></script>
+<script src="/js/consultar.js"></script>
